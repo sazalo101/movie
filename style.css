@@ -1,0 +1,112 @@
+/* General body styling with background animation */
+body {
+    display: flex;
+    flex-wrap: wrap;
+    font-family: 'Arial', sans-serif;
+    background-color: palegreen;
+    margin: 0;
+    padding: 20px;
+    animation: backgroundAnimation 10s infinite alternate;
+    justify-content: center;
+}
+
+/* Background color transition */
+@keyframes backgroundAnimation {
+    0% { background-color: palegreen; }
+    50% { background-color: lightblue; }
+    100% { background-color: lightcoral; }
+}
+
+/* Movie listings container styling */
+#movie-listings {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards ease-in-out;
+}
+
+/* Fade-in animation for the movie listings */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Individual movie card styling */
+.movie {
+    border: 1px solid #ccc;
+    padding: 20px;
+    width: 250px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    background-color: white;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+    opacity: 0;
+    animation: slideIn 0.5s forwards ease-in-out;
+}
+
+/* Slide-in animation for each movie card */
+@keyframes slideIn {
+    0% { transform: translateY(40px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Hover effect on movie card for smooth scaling and shadow */
+.movie:hover {
+    transform: scale(1.07);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Movie title styling */
+.movie h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #333;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Title color change on hover */
+.movie:hover h3 {
+    color: #007bff;
+}
+
+/* Movie description and other text styling */
+.movie p {
+    margin: 10px 0;
+    color: #666;
+    line-height: 1.5;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Link styling */
+.movie a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 10px;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Hover effect on links */
+.movie a:hover {
+    color: #0056b3;
+}
+
+/* Smooth image animation */
+.movie img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hover effect on images */
+.movie:hover img {
+    transform: scale(1.05);
+}
